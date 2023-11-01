@@ -3,7 +3,6 @@
 import Backbone from 'backbone';
 
 import CollectionListView from '../views/collection_list_view';
-// eslint-disable-next-line import/no-named-as-default
 import ProgramCardView from '../views/program_card_view';
 import ProgramCollection from '../collections/program_collection';
 import ProgressCollection from '../collections/program_progress_collection';
