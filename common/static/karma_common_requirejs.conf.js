@@ -37,7 +37,10 @@ var options = {
 
     runFiles: [
         {pattern: 'common/js/spec/main_requirejs.js', included: true}
-    ]
+    ],
+    compilerOptions: {
+        module: "commonjs"
+    }
 };
 
 module.exports = function(config) {
