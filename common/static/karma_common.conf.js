@@ -69,7 +69,10 @@ var options = {
         {pattern: 'js/fixtures/**/*.html'},
         {pattern: 'js/capa/fixtures/**/*.html'},
         {pattern: 'common/templates/**/*.underscore'}
-    ]
+    ],
+    compilerOptions: {
+        module: "commonjs"
+    }
 };
 
 module.exports = function(config) {
