@@ -239,6 +239,7 @@ class ChooseModeView(View):
                 context["ecommerce_payment_page"] = ecommerce_service.payment_page_url()
                 context["sku"] = verified_mode.sku
                 context["bulk_sku"] = verified_mode.bulk_sku
+                context['course_key'] = course_id
 
         # REV-2415 TODO: remove [Track Selection Check] logs introduced by REV-2355 for error handling check
         context['currency_data'] = []
