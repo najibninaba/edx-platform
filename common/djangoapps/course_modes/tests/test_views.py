@@ -164,15 +164,12 @@ class CourseModeViewTest(CatalogIntegrationMixin, UrlResetMixin, ModuleStoreTest
         )
         ecomm_test_utils.update_commerce_config(enabled=True)
         # Value Prop TODO (REV-2378): remove waffle flag from tests once the new Track Selection template is rolled out.
-        with override_waffle_flag(VALUE_PROP_TRACK_SELECTION_FLAG, active=True):
-            with patch(GATING_METHOD_NAME, return_value=True):
-                with patch(CDL_METHOD_NAME, return_value=True):
-                    url = reverse('course_modes_choose', args=[str(self.course_that_started.id)])
-                    response = self.client.get(url)
-                    self.assertRedirects(response,
-                                         f'/test_basket/add/?sku=TEST&course_key={str(self.course_that_started.id)}',
-                                         fetch_redirect_response=False)
-                    ecomm_test_utils.update_commerce_config(enabled=False)
+        url = reverse('course_modes_choose', args=[str(self.course_that_started.id)])
+        response = self.client.get(url)
+        self.assertRedirects(response,
+                                f'/test_basket/add/?sku=TEST&course_key={str(self.course_that_started.id)}',
+                                fetch_redirect_response=False)
+        ecomm_test_utils.update_commerce_config(enabled=False)
 
     @httpretty.activate
     @ddt.data(
