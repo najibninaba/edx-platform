@@ -33,7 +33,7 @@ jobs:
     - name: Install Firefox 60.0
       run: |
         sudo apt-get purge firefox
-        wget "https://ftp.mozilla.org/pub/firefox/releases/60.0/linux-x86_64/en-US/firefox-61.0.tar.bz2"
+        wget "https://ftp.mozilla.org/pub/firefox/releases/60.0/linux-x86_64/en-US/firefox-60.0.tar.bz2"
         tar -xjf firefox-60.0.tar.bz2
         sudo mv firefox /opt/firefox
         sudo ln -s /opt/firefox/firefox /usr/bin/firefox
