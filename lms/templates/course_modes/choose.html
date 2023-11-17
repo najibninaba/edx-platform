@@ -46,7 +46,7 @@ from openedx.core.djangolib.markup import HTML, Text
                 e.preventDefault();
                 window.location.href = '${ecommerce_payment_page | n, js_escaped_string}?sku=' +
                     encodeURIComponent('${sku | n, js_escaped_string}') +
-                    '&course_key=' + encodeURIComponent('${course_key | n, js_escaped_string}');
+                    '&course_run_key=' + encodeURIComponent('${course_run_key | n, js_escaped_string}');
             });
             % endif
         });

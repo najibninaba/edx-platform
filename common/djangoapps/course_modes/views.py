@@ -230,6 +230,7 @@ class ChooseModeView(View):
             context["min_price"] = course_price
             context["verified_name"] = verified_mode.name
             context["verified_description"] = verified_mode.description
+            context['course_run_key'] = course_id
             # if course_price is equal to price_before_discount then user doesn't entitle to any discount.
             if course_price != price_before_discount:
                 context["price_before_discount"] = price_before_discount
@@ -239,7 +240,6 @@ class ChooseModeView(View):
                 context["ecommerce_payment_page"] = ecommerce_service.payment_page_url()
                 context["sku"] = verified_mode.sku
                 context["bulk_sku"] = verified_mode.bulk_sku
-                context['course_key'] = course_id
 
         # REV-2415 TODO: remove [Track Selection Check] logs introduced by REV-2355 for error handling check
         context['currency_data'] = []
